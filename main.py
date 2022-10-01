@@ -1,4 +1,7 @@
 def parse(query: str) -> dict:
+    if query is None:
+        return {}
+    # extra code
     return {}
 
 
@@ -8,6 +11,7 @@ if __name__ == '__main__':
     assert parse('http://example.com/') == {}
     assert parse('http://example.com/?') == {}
     assert parse('http://example.com/?name=Dima') == {'name': 'Dima'}
+    assert parse('http://google.com/?name=Dima') == {'name': 'Dima'}
 
 
 def parse_cookie(query: str) -> dict:
